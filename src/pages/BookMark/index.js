@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import BookMarkMockup from '../../mockups/bookmark';
 
 // Components
@@ -10,10 +10,10 @@ import ModalNewUrl from '../../components/ModalAddNewUrl';
 // Styles
 import {
   Container, 
-  BookMarkContainer
+  BookMarkContainer,
 } from './style';
 
-const BookMark = ({location}) => {
+const BookMark = () => {
   const params = useParams();
   const [modalNewURL, setOpenModalNewURL] = useState(false);
 
@@ -29,12 +29,13 @@ const BookMark = ({location}) => {
 
       <BookMarkContainer>
         {BookMarkMockup.map(bookMark => (
-          <BookMarkCard
-            key={bookMark.id}
-            title={bookMark.title} 
-            description={bookMark.description} 
-            image={bookMark.image}
-          />
+            <BookMarkCard
+              key={bookMark.id}
+              title={bookMark.title} 
+              description={bookMark.description} 
+              image={bookMark.image}
+              url={bookMark.url}
+            />
         ))}
       </BookMarkContainer>
     </Container>

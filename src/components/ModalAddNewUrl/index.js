@@ -18,7 +18,7 @@ const ModalAddNewUrl = ({open, onClose}) => {
       <Input />
       
     </Container>
-    <BackgroundShadow />
+    <BackgroundShadow onClick={onClose} />
   </>
 };
 

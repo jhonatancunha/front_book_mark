@@ -1,28 +1,34 @@
 // Style
 import {
   Container,
+  Content,
   Image,
   WrapperDescription,
   Title,
   Description,
-  DeleteButton
+  DeleteButton,
 } from './style';
 
 // Assets
 import CustomBG from '../../assets/custom_bg.jpg';
 
-const BookMarkCard = ({ title, description, image }) => {
-
+const BookMarkCard = ({ title, description, image, url }) => {
   return (
     <Container>
-       <DeleteButton /> 
-       <Image src={image ? image: CustomBG} />
+      <DeleteButton onClick={() => console.log("deletou")} /> 
+      <Content 
+        href={url}
+        target="_blank" 
+        rel="noreferrer noopener"
+      >
+        <Image src={image ? image: CustomBG} />
 
-      <WrapperDescription>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-      </WrapperDescription>
-    </Container>
+        <WrapperDescription>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+        </WrapperDescription>
+      </Content>
+  </Container>
   );
 };
 

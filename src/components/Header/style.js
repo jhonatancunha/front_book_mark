@@ -26,10 +26,20 @@ export const KeyBookMark = styled.p`
 
 export const HomeButton = styled(HomeIcon)`
   cursor: pointer;
+  transition: opacity .15s ease-in-out;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
 `;
 
 export const AddButton = styled(AddIcon)`
   cursor: pointer;
+  transition: opacity .15s ease-in-out;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
 `;
 
 export const StyledLogo = styled(Logo)`

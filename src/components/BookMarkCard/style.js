@@ -5,11 +5,24 @@ import {ReactComponent as DeleteIcon} from '../../assets/delete.svg';
 
 
 export const Container = styled.div`
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
+`;
+
+
+export const Content = styled.a`
   width: 300px;
   display: flex;
   flex-direction: column;
+  border-radius: 3px;
+  color: inherit;
+  text-decoration: inherit;
+
+  transition: all .2s ease-out;
+  &:hover{
+    box-shadow: 1px 1px 4px ${({theme}) => theme.color.purple};
+    top: -4px;
+  }
 `;
 
 export const Image = styled.img`
@@ -48,4 +61,11 @@ export const DeleteButton = styled(DeleteIcon)`
   top: 5px;
   width: 25px;
   height: 25px;
+  z-index: 10;
+
+  transition: opacity .15s ease-in-out;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
 `;
