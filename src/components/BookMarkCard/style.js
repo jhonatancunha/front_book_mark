@@ -5,6 +5,7 @@ import {ReactComponent as DeleteIcon} from '../../assets/delete.svg';
 
 
 export const Container = styled.div`
+  cursor: pointer;
   position: relative;
   width: 300px;
   display: flex;
@@ -13,6 +14,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   width: 100%;
+  height: 150px;
   border-radius: 3px 3px 0px 0px;
 `;
 

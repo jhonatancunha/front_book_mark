@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // Styles
 import {
   Container,
@@ -14,7 +16,9 @@ const Header = ({handleNewURL, keyBookMark}) => {
   return (
     <Container>
       <LeftWrapper>
-        <HomeButton />
+        <Link to='/'>
+          <HomeButton />
+        </Link>
         <AddButton onClick={handleNewURL} />
         <KeyBookMark>{keyBookMark}</KeyBookMark>
       </LeftWrapper>
