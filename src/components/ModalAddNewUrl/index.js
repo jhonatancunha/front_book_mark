@@ -10,12 +10,19 @@ import {
 // Components
 import Input from '../Input';
 
-const ModalAddNewUrl = ({open, onClose}) => {
+const ModalAddNewUrl = ({open, onClose, url, handleChangeUrl, handleSubmit}) => {
+  
+
   return open && <>
     <Container>
       <Title>ADICIONAR FAVORITO</Title>
       <CloseButton onClick={onClose} />
-      <Input />
+      <Input
+        value={url}
+        onChange={handleChangeUrl}
+        placeholder="Cole a URL aqui..."
+        onSubmit={handleSubmit}
+      />
       
     </Container>
     <BackgroundShadow onClick={onClose} />

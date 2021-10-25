@@ -7,11 +7,15 @@ import {
 // Components
 import Button from '../Button';
 
-const Input = () => {
+const Input = ({value, onChange, placeholder, onSubmit}) => {
   return (
     <WrapperInput>
-      <StyledInput placeholder="Digite a chave de acesso aqui..." />
-      <Button />
+      <StyledInput 
+        value={value} 
+        onChange={onChange} 
+        placeholder={placeholder}
+      />
+      <Button onClick={onSubmit} />
     </WrapperInput>
   )
 };

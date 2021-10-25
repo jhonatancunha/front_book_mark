@@ -16,16 +16,32 @@ import {
 const BookMark = () => {
   const params = useParams();
   const [modalNewURL, setOpenModalNewURL] = useState(false);
+  const [url, setUrl] = useState('');
 
   const handleModalNewURL = () => {
     setOpenModalNewURL(prevState => !prevState);
+  }
+
+
+  const handleChangeUrl = (e) => {
+    setUrl(e.target.value);
+  }
+
+  const handleSubmit = () => {
+    console.log(url);
   }
 
   return (
     <Container>
       <Header keyBookMark={params.id} handleNewURL={handleModalNewURL} />
 
-      <ModalNewUrl open={modalNewURL} onClose={handleModalNewURL} />
+      <ModalNewUrl 
+        url={url}
+        handleChangeUrl={handleChangeUrl}
+        handleSubmit={handleSubmit}
+        open={modalNewURL} 
+        onClose={handleModalNewURL}
+      />
 
       <BookMarkContainer>
         {BookMarkMockup.map(bookMark => (

@@ -1,3 +1,5 @@
+import {useState} from 'react';
+
 // Assets
 import {ReactComponent as Logo} from '../../assets/logo.svg';
 
@@ -12,6 +14,15 @@ import {
 import Input from '../../components/Input';
 
 const Home = () => {
+  const [keyBookMark, setKeyBookMark] = useState('');
+
+  const handleSetKeyBookMark = (e) => {
+    setKeyBookMark(e.target.value);
+  }
+
+  const handleSubmit = () => {
+    console.log(keyBookMark);
+  }
 
   return (
   <Container>
@@ -22,7 +33,12 @@ const Home = () => {
       </Description>
     </WrapperLogo>
 
-    <Input />
+    <Input 
+      value={keyBookMark} 
+      onChange={handleSetKeyBookMark} 
+      placeholder="Digite a chave de acesso aqui..."
+      onSubmit={handleSubmit}
+    />
   </Container>
  )
 };

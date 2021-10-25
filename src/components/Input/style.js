@@ -4,7 +4,8 @@ export const WrapperInput = styled.div`
   background-color: ${({theme}) => theme.color.secondBG};
   padding: 8px;
   width: 50vw;
-  
+  border-radius: 4px;
+
   display: flex;
   justify-content: space-between;
 
