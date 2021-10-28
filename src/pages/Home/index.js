@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { useHistory } from "react-router-dom";
 
 // Assets
 import {ReactComponent as Logo} from '../../assets/logo.svg';
@@ -13,15 +14,28 @@ import {
 // Components
 import Input from '../../components/Input';
 
+// Api
+import api from '../../services/axios'
+
 const Home = () => {
   const [keyBookMark, setKeyBookMark] = useState('');
+  const history = useHistory();
 
   const handleSetKeyBookMark = (e) => {
     setKeyBookMark(e.target.value);
   }
 
-  const handleSubmit = () => {
-    console.log(keyBookMark);
+  const handleSubmit = async () => {
+
+    try{
+      const { data } = await api.post('/', {
+        id: keyBookMark
+      });
+      
+      history.push(`/${data.bookmark.id}`);
+    }catch(error){
+      throw error;
+    }
   }
 
   return (

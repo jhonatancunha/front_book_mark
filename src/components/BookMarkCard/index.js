@@ -12,10 +12,10 @@ import {
 // Assets
 import CustomBG from '../../assets/custom_bg.jpg';
 
-const BookMarkCard = ({ title, description, image, url }) => {
+const BookMarkCard = ({ id, name, description, image, url, remove }) => {
   return (
     <Container>
-      <DeleteButton onClick={() => console.log("deletou")} /> 
+      <DeleteButton onClick={() => remove(id)} /> 
       <Content 
         href={url}
         target="_blank" 
@@ -24,7 +24,7 @@ const BookMarkCard = ({ title, description, image, url }) => {
         <Image src={image ? image: CustomBG} />
 
         <WrapperDescription>
-          <Title>{title}</Title>
+          <Title>{name}</Title>
           <Description>{description}</Description>
         </WrapperDescription>
       </Content>

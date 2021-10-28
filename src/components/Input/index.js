@@ -15,7 +15,7 @@ const Input = ({value, onChange, placeholder, onSubmit}) => {
         onChange={onChange} 
         placeholder={placeholder}
       />
-      <Button onClick={onSubmit} />
+      <Button onClick={onSubmit}>OK</Button>
     </WrapperInput>
   )
 };

@@ -36,14 +36,16 @@ export const WrapperDescription = styled.div`
   padding: 10px 10px;  
   border-radius: 0 0 3px 3px;
   border-top: 4px solid ${({theme}) => theme.color.payneGrey};
-  height: 80px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 
 export const Title = styled.p`
   font-size: 1.2em;
   font-weight: 500;
   white-space: nowrap;
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
@@ -53,6 +55,7 @@ export const Description = styled.p`
   font-size: 0.85em;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 10px;
 `;
 
 export const DeleteButton = styled(DeleteIcon)`

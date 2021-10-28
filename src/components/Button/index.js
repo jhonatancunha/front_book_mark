@@ -1,8 +1,8 @@
 // Style
 import { StyledButton } from './style';
 
-const Button = ({onClick}) => {
-  return <StyledButton onClick={onClick}>OK</StyledButton>
+const Button = ({onClick, children}) => {
+  return <StyledButton onClick={onClick}>{children}</StyledButton>
 }
 
 export default Button;
