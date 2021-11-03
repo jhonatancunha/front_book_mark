@@ -50,11 +50,11 @@ const BookMark = () => {
         id_book_mark: params.id,
         url
       });
-
       setOpenModalNewURL(false);
-      setLoading(false);
     } catch (err) {
-      throw err;
+      alert(err.response.data.error);
+    }finally{
+      setLoading(false);
     }
   }
 
@@ -63,9 +63,10 @@ const BookMark = () => {
       setLoading(true);
       await api.delete(`/delete-link/${idLinkRemoved}`);
       handleModalDelete(null);
-      setLoading(false);
     } catch (err) {
-      throw err;
+      alert(err.response.data.error);
+    }finally{
+      setLoading(false);
     }
   };
 

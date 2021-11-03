@@ -33,8 +33,8 @@ const Home = () => {
       });
       
       history.push(`/${data.bookmark.id}`);
-    }catch(error){
-      throw error;
+    }catch(err){
+      alert(err.response.data.error);
     }
   }
 
