@@ -9,7 +9,7 @@ import Button from '../Button';
 
 const Input = ({value, onChange, placeholder, onSubmit}) => {
   return (
-    <WrapperInput>
+    <WrapperInput onSubmit={onSubmit}>
       <StyledInput 
         value={value} 
         onChange={onChange} 

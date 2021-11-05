@@ -25,8 +25,8 @@ const Home = () => {
     setKeyBookMark(e.target.value);
   }
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try{
       const { data } = await api.post('/', {
         id: keyBookMark

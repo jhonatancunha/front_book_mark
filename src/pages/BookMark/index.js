@@ -42,9 +42,9 @@ const BookMark = () => {
     setUrl(e.target.value);
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     try {
-
+      e.preventDefault();
       setLoading(true);
       await api.post('/create-link', {
         id_book_mark: params.id,
@@ -60,6 +60,7 @@ const BookMark = () => {
 
   const handleRemove = async () => {
     try {
+
       setLoading(true);
       await api.delete(`/delete-link/${idLinkRemoved}`);
       handleModalDelete(null);

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WrapperInput = styled.div`
+export const WrapperInput = styled.form`
   background-color: ${({theme}) => theme.color.secondBG};
   padding: 8px;
   width: 50vw;
